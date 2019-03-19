@@ -70,7 +70,7 @@ body {
 }
 
 .regular {
-  color: black; 
+  color: white; 
 }
 
 .btn {
@@ -80,4 +80,37 @@ body {
   border-radius: 5px;
   color: white;
   margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s;
 }
+
+.btn:hover {
+  background-color: #6ad8a7;
+}
+
+@media (max-width: 575.98px) { 
+  .app__colors {
+    flex-wrap: wrap;
+  }
+
+  .colors__item {
+    width: 175px;
+    height: 175px;
+    margin: 5px;
+  }
+
+  #app {
+    padding-top: 30px;
+  }
+
+  .app__title {
+    margin-bottom: 30px;
+    font-size: 25px;
+  }
+
+  .scores__item {
+    border-radius: 0;
+  }
+}
+
+

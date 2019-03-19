@@ -120,15 +120,22 @@ var app = new Vue({
   },
   methods: {
     checkAnswer(selectedColor) {
-      currentColor = this.colors[this.index];
+      currentColor = this.colors[this.index]
       if (currentColor.answer == selectedColor) {
         currentColor.status = true;
-        this.scores++;
-        this.index++;
+        this.scores++
+        this.index++
       } else {
         currentColor.status = false;
-        this.index++;
+        this.index++
       }
+    },
+    reset() {
+        this.colors.forEach(color => {
+            color.status = false
+        })
+        this.scores = 0
+        this.index = 0
     }
   },
   computed: {

@@ -48,7 +48,7 @@
         </template>
         <div class="results" v-else>
           <h2>Ваш результат {{scores}} / 14</h2>
-          <button class="btn">Попробовать еще раз!</button>
+          <button class="btn" @click="reset">Попробовать еще раз!</button>
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
