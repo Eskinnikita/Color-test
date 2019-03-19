@@ -94,13 +94,17 @@ body {
   }
 
   .colors__item {
-    width: 175px;
-    height: 175px;
+    width: 170px;
+    height: 170px;
     margin: 5px;
   }
 
+  .colors__item:hover {
+    transform: scale(1)
+  }
+
   #app {
-    padding-top: 30px;
+    padding-top: 20px;
   }
 
   .app__title {
@@ -110,6 +114,10 @@ body {
 
   .scores__item {
     border-radius: 0;
+  }
+  
+  .app__scores {
+    padding-top: 30px;
   }
 }
 
