@@ -10,41 +10,47 @@
   <body>
     <div id="app">
       <div class="container">
-        <h2 class="app__title">Выберите отличающийся цвет</h2>
-      <div class="app__colors">
-        <div 
-        class="colors__item" 
-        :style="{backgroundColor:colors[index].color1}"
-        @click="checkAnswer(colors[index].color1)"
-        ></div>
-        <div 
-        class="colors__item" 
-        :style="{backgroundColor:colors[index].color2}"
-        @click="checkAnswer(colors[index].color2)"
-        ></div>
-        <div 
-        class="colors__item" 
-        :style="{backgroundColor:colors[index].color3}"
-        @click="checkAnswer(colors[index].color3)"
-        ></div>
-        <div 
-        class="colors__item" 
-        :style="{backgroundColor:colors[index].color4}"
-        @click="checkAnswer(colors[index].color4)"
-        ></div>
-      </div>
+        <template v-if="results">
+            <h2 class="app__title">Выберите отличающийся цвет</h2>
+            <div class="app__colors">
+              <div
+                class="colors__item"
+                :style="{backgroundColor:colors[index].color1}"
+                @click="checkAnswer(colors[index].color1)"
+              ></div>
+              <div
+                class="colors__item"
+                :style="{backgroundColor:colors[index].color2}"
+                @click="checkAnswer(colors[index].color2)"
+              ></div>
+              <div
+                class="colors__item"
+                :style="{backgroundColor:colors[index].color3}"
+                @click="checkAnswer(colors[index].color3)"
+              ></div>
+              <div
+                class="colors__item"
+                :style="{backgroundColor:colors[index].color4}"
+                @click="checkAnswer(colors[index].color4)"
+              ></div>
+            </div>
+          </div>
+          <div class="app__scores">
+            <div
+              class="scores__item"
+              v-for="(score, index) in colors"
+              :key="index"
+              :class="['regular', score.status ? 'correct' : 'wrong']"
+            >
+              {{ index + 1 }}
+            </div>
+          </div>
+        </template>
+        <div class="results" v-else>
+          <h2>Ваш результат {{scores}} / 14</h2>
+          <button class="btn">Попробовать еще раз!</button>
+        </div>
     </div>
-    <div class="app__scores">
-      <div 
-      class="scores__item" 
-      v-for="(score, index) in colors" 
-      :key="index"
-      :class="[score.status ? 'correct' : 'wrong', 'regular':!score]"
-      >
-        {{index + 1}}
-      </div>
-    </div>
-      </div>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="main.js"></script>
   </body>

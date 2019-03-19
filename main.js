@@ -67,57 +67,75 @@ var app = new Vue({
         status: null
       },
       {
-        color1: "#4030e9",
-        color2: "#4030e9",
-        color3: "#665bee",
-        color4: "#4030e9"
+        color1: "#bc7c94",
+        color2: "#bc7c94",
+        color3: "#bc7c94",
+        color4: "#c1889b",
+        answer: "#c1889b",
+        status: null
       },
       {
-        color1: "#4030e9",
-        color2: "#4030e9",
-        color3: "#665bee",
-        color4: "#4030e9"
+        color1: "#757110",
+        color2: "#817f2a",
+        color3: "#827e2a",
+        color4: "#817f2a",
+        answer: "#757110",
+        status: null
       },
       {
-        color1: "#4030e9",
-        color2: "#4030e9",
-        color3: "#665bee",
-        color4: "#4030e9"
+        color1: "#eee95a",
+        color2: "#eee969",
+        color3: "#eee95a",
+        color4: "#eee95a",
+        answer: "#eee969",
+        status: null
       },
       {
-        color1: "#4030e9",
-        color2: "#4030e9",
-        color3: "#665bee",
-        color4: "#4030e9"
+        color1: "#68aef3",
+        color2: "#68aef3",
+        color3: "#5fa8ed",
+        color4: "#68aef3",
+        answer: "#5fa8ed",
+        status: null
       },
       {
-        color1: "#4030e9",
-        color2: "#4030e9",
-        color3: "#665bee",
-        color4: "#4030e9"
+        color1: "#e1b62b",
+        color2: "#e4bd3e",
+        color3: "#e1b62b",
+        color4: "#e1b62b",
+        answer: "#e4bd3e",
+        status: null
       },
       {
-        color1: "#4030e9",
-        color2: "#4030e9",
-        color3: "#665bee",
-        color4: "#4030e9"
+        color1: "#cd4a8c",
+        color2: "#cd4a8c",
+        color3: "#cd4a8c",
+        color4: "#db65a2",
+        answer: "#db65a2",
+        status: null
       }
     ],
-    index: 0
+    index: 0,
+    scores: 0
   },
   methods: {
     checkAnswer(selectedColor) {
-        currentColor = this.colors[this.index]
-        if(currentColor.answer == selectedColor) {
-            currentColor.status = true
-            this.index++
-        } else {
-            currentColor.status = false
-            this.index++
-        }
+      currentColor = this.colors[this.index];
+      if (currentColor.answer == selectedColor) {
+        currentColor.status = true;
+        this.scores++;
+        this.index++;
+      } else {
+        currentColor.status = false;
+        this.index++;
+      }
     }
   },
-  computed: {},
+  computed: {
+    results() {
+      return this.index <= 13;
+    }
+  },
 
   component: []
 });
