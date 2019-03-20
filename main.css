@@ -51,26 +51,23 @@ body {
   text-align: center;
   padding-top: 3px;
   box-sizing: border-box;
+  width: 30px;
+  height: 30px;
+  border-radius: 3px;
 }
 
 .correct {
-  width: 30px;
-  height: 30px; 
-  border-radius: 3px;
   color: white;
   background-color: #51bb8d;
 }
 
 .wrong {
-  width: 30px;
-  height: 30px; 
-  border-radius: 3px;
   color: white;
   background-color: #ed4c40
 }
 
 .regular {
-  color: white; 
+  color: black; 
 }
 
 .btn {

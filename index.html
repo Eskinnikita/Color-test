@@ -37,10 +37,10 @@
           </div>
           <div class="app__scores">
             <div
-              class="scores__item"
+              class="scores__item regular"
               v-for="(score, index) in colors"
               :key="index"
-              :class="['regular', score.status ? 'correct' : 'wrong']"
+              :class="{ 'correct': score.status == true, 'wrong': score.status == false}"
             >
               {{ index + 1 }}
             </div>
