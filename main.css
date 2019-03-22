@@ -85,7 +85,7 @@ body {
   background-color: #6ad8a7;
 }
 
-@media (max-width: 575.98px) { 
+@media (max-width: 900px) { 
   .app__colors {
     flex-wrap: wrap;
   }
@@ -115,6 +115,10 @@ body {
   
   .app__scores {
     padding-top: 30px;
+  }
+
+  .container {
+    max-width: 360px;
   }
 }
 

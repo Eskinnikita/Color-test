@@ -132,7 +132,7 @@ var app = new Vue({
     },
     reset() {
         this.colors.forEach(color => {
-            color.status = false
+            color.status = null
         })
         this.scores = 0
         this.index = 0
